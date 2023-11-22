@@ -8,7 +8,6 @@ resource "aws_vpc" "master_vpc" {
   }
 }
 
-
 #Internet Gateway setup
 resource "aws_internet_gateway" "master_igw" {
   vpc_id = aws_vpc.master_vpc.id
@@ -17,7 +16,6 @@ resource "aws_internet_gateway" "master_igw" {
     Name = "kafka-vpc-igw"
   }
 }
-
 
 # Availability Zones
 data "aws_availability_zones" "azs_east" {
@@ -57,7 +55,6 @@ resource "aws_subnet" "subnet_3" {
     Name = "kafka-vpc-subnet-3"
   }
 }
-
 
 #Public Route Table us-east-1
 resource "aws_route_table" "public_rt" {
